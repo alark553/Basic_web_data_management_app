@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+body {
+    background-color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    test-align:center;
+}
+#header{
+border: 5px solid gray;
+}
+div.container{
+    
+    border-radius: 25px;
+    height:auto;
+    width:50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 25px;
+}
+</style>
+        <title>IMAGE INTENSIFICATION BASED DEVICES</title>
+    </head>
+
+    <body>
+	<div class="container" id="header">
+        <h2>IMAGE INTENSIFICATION BASED DEVICES</h2>
+	</div>
+	<div class="container">
+        {% if devices %}
+            <table class=data>
+		<tr><td><b>Device Name</b></td><td><b>Range(m)</b></td></tr>
+                {% for device in devices %}
+                <tr><td>{{ device.name }}</td><td>{{ device.device_range }}</td></tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <strong>There are no devices present.</strong>
+        {% endif %}
+	</div>
+        
+    </body>
+</html>
+

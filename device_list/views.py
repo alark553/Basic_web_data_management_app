@@ -1,0 +1,13 @@
+from django.shortcuts import render
+from device_list.models import Device
+# Create your views here.
+
+
+def index(request):
+    
+    device_list = Device.objects.all()
+    context_dict = {'devices': device_list}
+
+    # Render the response and send it back!
+    return render(request, 'devices/index.html', context_dict)
+
